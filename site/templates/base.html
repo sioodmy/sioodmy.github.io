@@ -1,0 +1,53 @@
+{% import "macros/head.html" as head -%} {% import "macros/header.html" as
+header -%} {% import "macros/footer.html" as footer -%} {% import
+"macros/pagination.html" as pagination -%} {% import "macros/posts.html" as
+posts -%} {% import "macros/lists.html" as lists -%} {% import
+"macros/squiggle-line.html" as squiggle -%} {% import "macros/url.html" as url
+-%}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {%- block title -%}
+    <title>{{ config.title }}</title>
+    {%- endblock title -%} {%- block css -%} {{ head::styling(config=config) }}
+    {%- endblock css -%} {%- block font -%} {{ head::font(config=config) }} {%-
+    endblock font -%} {%- block rss -%} {%- endblock rss -%} {%- block favicon
+    -%} {{ head::favicon(config=config) }} {%- endblock favicon -%}
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+  </head>
+
+  <body class="">
+    {# "container full" when width == True, regardless of center "container
+    center" when only center == True "container" when both false. #} {%- if
+    config.extra.full_width -%} {%- set container = "container full" -%} {%-
+    elif config.extra.center -%} {%- set container = "container center" -%} {%-
+    else -%} {%- set container = "container" -%} {%- endif -%} {%- if not
+    current_url -%} {%- set current_url = "" -%} {%- endif -%}
+
+    <div class="{{ container }}">
+      {%- block header -%} {{ header::header(config=config,
+      current_url=current_url) }} {%- endblock header -%}
+
+      <div class="content">
+        {%- block main -%} {{ lists::list_pages() }} {%- endblock main -%}
+      </div>
+
+      {%- block pagination -%} {{ pagination::paginate(pagelink = current_url)
+      }} {%- endblock pagination -%} {%- block footer -%}
+      <footer class="footer">
+        <div class="footer__inner">
+          {%- block copyright -%} {{ footer::copyright(config = config) }} {%-
+          endblock copyright -%} {%- block script -%} {{ footer::script() }} {%-
+          endblock script -%}
+        </div>
+        <div style="display: none">
+          <a rel="me" href="https://hachyderm.io/@sioodmy">Mastodon</a>
+        </div>
+      </footer>
+      {%- endblock footer -%}
+    </div>
+  </body>
+</html>

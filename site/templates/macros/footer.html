@@ -1,0 +1,15 @@
+{% macro copyright(config) %}
+  <div class="copyright">
+      <span>
+          {{ url::external(url="http://placeholder.onion", text="TOR mirror", icon=true) }}
+          {{ url::external(url="https://git.sioodmy.dev/sioodmy/sioodmy.dev", text="source code", icon=true) }}
+      </span>
+      <span>
+          Powered by {{ url::external(url="https://www.rust-lang.org/", text="Rust", icon=false) }}, deployed by {{ url::external(url="https://nixos.org/", text="Nix", icon=false) }}, running on a {{ url::external(url="https://www.raspberrypi.org/", text="Pi", icon=false) }}
+      </span>
+  </div>
+{% endmacro copyright %}
+
+{% macro script() %}
+    <script type="text/javascript" src="{{ get_url(path="js/main.js") }}"></script>
+{% endmacro script %}

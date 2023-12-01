@@ -1,0 +1,16 @@
+{% import "macros/menu.html" as menu -%}
+{% import "macros/logo.html" as logo -%}
+
+{% macro header(config, current_url) %}
+<header class="header">
+    <div class="header-inner">
+        <div class="header-logo">
+            {{ logo::logo(config=config) }}
+        </div>
+        <div class="menu-trigger" tabindex="0">
+            <div class="menu-trigger-button">menu</div>
+        </div>
+    </div>
+    {{ menu::menu(config=config, current_url=current_url) }}
+</header>
+{% endmacro header %}
