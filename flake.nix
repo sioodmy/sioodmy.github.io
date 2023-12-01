@@ -19,12 +19,12 @@
           overlays = [overlay];
         };
         overlay = final: prev: {
-          sioodmy-dev = prev.callPackage ./site {};
+          website = prev.callPackage ./site {};
         };
       in rec {
         inherit (overlay);
 
-        defaultPackage = pkgs.sioodmy-dev;
+        defaultPackage = pkgs.website;
 
         devShell = pkgs.mkShell {
           buildInputs = [pkgs.zola];

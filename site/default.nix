@@ -4,7 +4,7 @@
   ...
 }:
 pkgs.stdenv.mkDerivation rec {
-  pname = "sioodmy-dev";
+  pname = "website";
   version = "0.0.1";
   src = ./.;
   buildInputs = [pkgs.zola];
