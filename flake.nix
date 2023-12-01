@@ -14,17 +14,21 @@
   }:
     flake-utils.lib.eachDefaultSystem (
       system: let
-        pkgs = import nixpkgs {
-          inherit system;
-          overlays = [overlay];
+        pkgs = import nixpkgs {inherit system;};
+      in {
+        packages.website = pkgs.stdenvNoCC.mkDerivation {
+          name = "website";
+          src = ./.;
+          nativeBuildInputs = [pkgs.zola];
+          buildPhase = ''
+            zola build
+          '';
+          installPhase = ''
+            mv public $out
+          '';
         };
-        overlay = final: prev: {
-          website = prev.callPackage ./site {};
-        };
-      in rec {
-        inherit (overlay);
-
         defaultPackage = pkgs.website;
+        formatter = pkgs.alejandra;
 
         devShell = pkgs.mkShell {
           buildInputs = [pkgs.zola];
