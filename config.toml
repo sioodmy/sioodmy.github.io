@@ -39,6 +39,6 @@ main_menu_items = [
     { url = "/blog/", name="blog" },
     { url = "/contact/", name="contact" },
     { url = "/projects/", name="projects" },
-    { url = "https://git.sioodmy.dev/sioodmy", name="git", external=true, newtab=true},
+    { url = "https://github.com/sioodmy", name="git", external=true, newtab=true},
     { url = "/donate/", name="donate" },
 ]
