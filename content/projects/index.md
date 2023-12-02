@@ -11,10 +11,10 @@ My personal catppuccin themed configuration for NixOS
 
 [repo ](https://dotfiles.sioodmy.dev)
 
-# This Website
+# Schizofox
 
-Powered by Zola (written in rust btw), deployed by Nix, hosted fully on Raspberry Pi
+Hardened Firefox nix flake for the delusional and the schizophrenics.
+The most notable features are Searx instance randomizer written in rust and
+declarative add-ons configuration.
 
-This makes this website pretty environment friendly
-
-[repo ](https://git.sioodmy.dev/sioodmy/sioodmy.dev)
+[repo ](https://github.com/schizofox/schizofox)
