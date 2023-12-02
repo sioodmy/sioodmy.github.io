@@ -17,11 +17,9 @@ Currently I'm raising money for a [framework](https://frame.work/) laptop
 
 ... or if you prefer Crypto
 
-Ethereum (or any ERC20 token) `0x430de39c494E40808F9d8A50958Eec622C3B5577`
+Ethereum (or any ERC20 token) `sioodmy.eth`
 
-Monero: sioodmy.dev
 
-Bitcoin: sioodmy.dev
 
 <!-- monero -->
 <!-- 84XFcVUGNg5HDGuJqWsu7uD9TGhJFyfE2VfHEN5EWHfFL6HB4nDrP4ThWyNtQfFnNQhn58kRsie1mNx25aAU81D2TeFQwDk -->

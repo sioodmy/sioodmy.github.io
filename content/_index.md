@@ -7,9 +7,8 @@ insert_anchor_links = "right"
 
 Hi, so basically I code stuff for Linux, mainly NixOS.
 
-I started using Linux when I was about 11 years old, my first distro was ubuntu, technically it was ubuntu kylin (ubuntu designed for the Chinese market), which I downloaded accidentally because their website was very unreadable at the time.
+I started using Linux when I was about 11 years old, my first distro was ubuntu, technically it was ubuntu kylin (ubuntu designed for the Chinese market), which I downloaded accidentally because their website was very unreadable at the time. I use nixos as my main and only os on my desktop for over 2 years. I'm INFP, although using linux is already like a half of my personality
 
 My favourite programming language is Rust, which I am currently learning.
 
-I'm addicted to yerba mate and neovim, seriously, I'd rather code on paper
-than use a code editor without vi-style bindings
+idk why would you consider hiring me tbh, but hey. there you are

@@ -27,6 +27,6 @@ Encrypt a message to me using [keyoxide ](https://keyoxide.org/D65643B172BA33
 
 - Github: @[sioodmy ](https://github.com/sioodmy)
 - Mastodon: @[sioodmy ](https://hachyderm.io/@sioodmy)
-- Twitter: @[sioodmy ](https://twitter.com/_sioodmy/)
-- Discord: sioodmy#2137
+- Twitter: @[sioodmy ](https://twitter.com/0xsioodmy/)
+- Discord: @sioodmy
 - Session: 0551a9ed476812b8a9a17222b98b57d1acbf6ab9df3cb39d8a473de1ff71654c0f
