@@ -4,14 +4,15 @@
     flake-parts.url = "github:hercules-ci/flake-parts";
   };
 
-  outputs = inputs @ {flake-parts, self, ...}:
+  outputs = inputs @ {
+    flake-parts,
+    self,
+    ...
+  }:
     flake-parts.lib.mkFlake {inherit inputs;} {
       systems = ["x86_64-linux"];
 
-      perSystem = {
-        pkgs,
-        ...
-      }: {
+      perSystem = {pkgs, ...}: {
         packages.website = pkgs.stdenvNoCC.mkDerivation {
           name = "website";
           src = ./.;
@@ -26,7 +27,7 @@
         formatter = pkgs.alejandra;
 
         devShells.default = pkgs.mkShell {
-          buildInputs = [pkgs.zola];
+          buildInputs = with pkgs; [zola statix deadnix glow];
         };
       };
     };
