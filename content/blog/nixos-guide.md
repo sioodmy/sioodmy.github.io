@@ -9,6 +9,10 @@ tags=["Nix", "Linux"]
 
 # How to get started with NixOS [WIP]
 
+## Edit: 2024-01-30
+this guide is outdated/incorrect as fuck. you shouldnt take advice from it, i'm gonna rewrite it from scratch *soon* 
+
+
 Currently, NixOS isn't as well documented as arch and many guides that are
 already out there are either outdated or incorrect. The fact that you have
 to learn an entire new functional language just to be able to properly use
