@@ -1,0 +1,91 @@
+:root {
+  --base: #303446;
+  --text: #c6d0f5;
+
+  --accent: #f4b8e4;
+}
+
+html, body { height: 100%; }
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "JetBrains Mono", monospace;
+  background-color: var(--base);
+  color: var(--text);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10vh;
+}
+a {
+  text-decoration: none;
+  color: var(--text);
+}
+main {
+  width: 30%;
+}
+.top h1 {
+  font-size: 3rem;
+}
+li a {
+  color: var(--text);
+}
+li a:visited{
+  color: var(--text);
+}
+
+.ps1 {
+  color: var(--accent);
+}
+.command {
+  font-weight: 500;
+}
+.skills span{
+  word-spacing: 0.7rem;
+  text-decoration: underline;
+}
+.about {
+  max-width: 40vh;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 20vw;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+nav a {
+  text-decoration: none;
+  color: var(--accent);
+  font-weight: 700;
+  padding: 3px;
+}
+
+.selected{
+  background-color: var(--accent);
+  color: var(--base);
+}
+
+.container.projects {
+  gap: 4rem;
+  max-width: 80vw;
+}
+
+h3, h2, h1{
+  color: var(--accent);
+}
+.project {
+  width: 35vh;
+}
+@media (max-width: 640px) {
+  .container {
+    place-content: center;
+  }
+}
