@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
     <head>
-        <title>sioodmy - Projects</title>
+        <title>sioodmy - Donate</title>
         <meta charset="utf-8" />
         <meta name="author" content="sioodmy" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -19,22 +19,32 @@
 
     <body>
         <div class="outer">
-            <div class="container projects">
-                {{range .Projects}}
-                <div class="project">
-                    <a href="{{.RepoUrl}}" target="_blank">
-                        <h3>{{.Name}}</h3>
-                    </a>
-                    {{.Description}}
-                </div>
-                {{end}}
-            </div>
+            <main>
+                <h1>Donate</h1>
+                <p>
+                    If you would like to support my work, please consider
+                    donating
+                </p>
+
+                <script
+                    type="text/javascript"
+                    src="https://storage.ko-fi.com/cdn/widget/Widget_2.js"
+                ></script>
+                <script type="text/javascript">
+                    kofiwidget2.init("Support me", "#f4b8e4", "N4N6HA60A");
+                    kofiwidget2.draw();
+                </script>
+
+                <h3>Or if you prefer crypto...</h3>
+                <span>0x2fa1E5e90C011d08BbA1f6dbdc317FD293311c0D</span> (any EVM
+                compatible token)
+            </main>
 
             <nav>
                 <a href="index.html">About</a>
-                <a href="projects.html" class="selected">Projects</a>
+                <a href="projects.html">Projects</a>
                 <a href="contact.html">Contact</a>
-                <a href="donate.html">Donate</a>
+                <a href="donate.html" class="selected">Donate</a>
                 <a href="blog.html">Blog</a>
             </nav>
         </div>

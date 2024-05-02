@@ -27,5 +27,4 @@ func GenerateProjects() {
 		panic(err)
 	}
 	tpl.ExecuteTemplate(f, "projects.html", &data)
-
 }

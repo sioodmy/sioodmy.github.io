@@ -1,16 +1,14 @@
 package main
 
 import (
-	"fmt"
 	"os"
 
-	"github.com/sioodmy/website/internal/index"
-	"github.com/sioodmy/website/internal/projects"
+	"github.com/sioodmy/generator/internal/index"
+	"github.com/sioodmy/generator/internal/projects"
 )
 
 func main() {
-	os.MkdirAll("generated/blog", 0777)
-	fmt.Println(index.GetPosts())
+	os.MkdirAll("generated/blog", 0o777)
 
 	index.GenerateBlog(index.GetPosts())
 	projects.GenerateProjects()

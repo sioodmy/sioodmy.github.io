@@ -7,7 +7,7 @@ import (
 	"slices"
 	"strings"
 
-	"github.com/sioodmy/website/internal/post"
+	"github.com/sioodmy/generator/internal/post"
 )
 
 type BlogIndexTemplate struct {
@@ -15,7 +15,6 @@ type BlogIndexTemplate struct {
 }
 
 func GetPosts() []post.BlogPostRaw {
-
 	items, _ := os.ReadDir("./blog")
 
 	var blogposts []post.BlogPostRaw
@@ -34,6 +33,7 @@ func GetPosts() []post.BlogPostRaw {
 
 	return blogposts
 }
+
 func TitleToFilename(title string) string {
 	lower := strings.ToLower(title)
 	trimmed := strings.ReplaceAll(lower, " ", "-")
@@ -80,5 +80,4 @@ func GenerateBlog(posts []post.BlogPostRaw) {
 	}
 	defer indexfile.Close()
 	tpl.ExecuteTemplate(indexfile, "index.html", index)
-
 }

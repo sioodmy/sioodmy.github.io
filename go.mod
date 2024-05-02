@@ -1,4 +1,4 @@
-module github.com/sioodmy/website
+module github.com/sioodmy/generator
 
 go 1.22.2
 

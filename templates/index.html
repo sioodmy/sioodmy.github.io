@@ -1,42 +1,42 @@
 <!doctype html>
 <html>
+    <head>
+        <title>sioodmy - Blog</title>
+        <meta charset="utf-8" />
+        <meta name="author" content="sioodmy" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="keywords" content="sioodmy" />
+        <meta name="description" content="sioodmy's personal website" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"
+            rel="stylesheet"
+        />
 
-<head>
-  <title>sioodmy - Blog</title>
-  <meta charset="utf-8" />
-  <meta name="author" content="sioodmy">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="keywords" content="sioodmy">
-  <meta name="description" content="sioodmy's personal website">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"
-    rel="stylesheet">
+        <link rel="stylesheet" href="style.css" />
+    </head>
 
-  <link rel="stylesheet" href="style.css">
-</head>
+    <body>
+        <div class="outer">
+            <main>
+                <ul>
+                    {{range .Posts}}
+                    <li>
+                        <a href="{{.Url}}">{{.Title}}</a>
+                        <span class="date-list">{{.Date}}</span>
+                    </li>
+                    {{end}}
+                </ul>
+            </main>
 
-<body>
-  <main>
-    <ul>
-      {{range .Posts}}
-      <li>
-        <a href="{{.Url}}">{{.Title}}</a>
-        <span class="date-list">{{.Date}}</span>
-      </li>
-      {{end}}
-    </ul>
-
-  </main>
-
-  <nav>
-    <a href="index.html">About</a>
-    <a href="projects.html">Projects</a>
-    <a href="contact.html">Contact</a>
-    <a href="donate.html">Donate</a>
-    <a href="blog.html" class="selected">Blog</a>
-  </nav>
-
-</body>
-
+            <nav>
+                <a href="index.html">About</a>
+                <a href="projects.html">Projects</a>
+                <a href="contact.html">Contact</a>
+                <a href="donate.html">Donate</a>
+                <a href="blog.html" class="selected">Blog</a>
+            </nav>
+        </div>
+    </body>
 </html>

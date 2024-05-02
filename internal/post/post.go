@@ -44,7 +44,6 @@ func FromFile(path string) BlogPostRaw {
 		panic(err)
 	}
 	blogpost := BlogPostRaw{
-
 		Date:    time.Unix(sec, 0),
 		Title:   data[1][2:],
 		Content: data[2],
@@ -53,7 +52,7 @@ func FromFile(path string) BlogPostRaw {
 }
 
 func ParseDate(date time.Time) string {
-	return fmt.Sprintf("%d-%d-%d", date.Year(), date.Month(), date.Day())
+	return fmt.Sprintf("%d.%d.%d", date.Day(), date.Month(), date.Year())
 }
 
 func MdToHTML(md string) template.HTML {
