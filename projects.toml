@@ -1,0 +1,18 @@
+[[Projects]]
+  Name = "Schizofox"
+  BlogpostUrl = ""
+  Description = "Hardened Firefox nix flake with our custom declarative configuration features like extension settings and theming focused on privacy and security while also maintaining usability and compatibility with modern web unlike other similar projects"
+  RepoUrl = "https://github.com/schizofox/schizofox/"
+
+[[Projects]]
+  Name = "Schizosearch"
+  Description = "Minimal privacy respecting meta search engine written in Go (previously in rust) "
+  RepoUrl = "https://github.com/sioodmy/schizosearch"
+  BlogpostUrl = ""
+
+[[Projects]]
+  Name = "Dotfiles"
+  Description = " Starting point of my Nix experience. NixOS configuration flake for all of my devices and server infrastracture with built in impermanence, encryption and more "
+  RepoUrl = "https://github.com/sioodmy/dotfiles"
+  BlogpostUrl = ""
+
