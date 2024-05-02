@@ -1,6 +1,7 @@
 :root {
   --base: #303446;
   --text: #c6d0f5;
+  --surface2: #626880;
 
   --accent: #f4b8e4;
 }
@@ -18,15 +19,27 @@ body {
   flex-direction: column;
   gap: 10vh;
 }
+.phonetic {
+  font-style: italic;
+  color: var(--surface2);
+  letter-spacing: 2px;
+  text-align: center;
+}
+.title {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+#sioodmy {
+  font-size: 3rem;
+  margin-bottom: 0;
+}
 a {
   text-decoration: none;
   color: var(--text);
 }
 main {
   width: 30%;
-}
-.top h1 {
-  font-size: 3rem;
 }
 li a {
   color: var(--text);
