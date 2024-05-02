@@ -38,9 +38,7 @@ a {
   text-decoration: none;
   color: var(--text);
 }
-main {
-  width: 30%;
-}
+main { width: 90%; }
 li a {
   color: var(--text);
 }
