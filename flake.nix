@@ -45,7 +45,7 @@
             alejandra.enable = true;
             deadnix.enable = true;
             gofumpt.enable = true;
-            prettier.enable = true;
+            prettier.enable = false;
             statix.enable = true;
           };
 

@@ -1,5 +1,4 @@
 1714668335
-
 # My adventures overengineering simple website
 
 So I was recently working on my personal website and encountered a problem. Up until now my site was a fork of some random's github blog with a few things changed. Of course, this was only supposed to be a temporary solution, so I started making mine from scratch.
