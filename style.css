@@ -38,7 +38,6 @@ a {
   text-decoration: none;
   color: var(--text);
 }
-main { width: 90%; }
 li a {
   color: var(--text);
 }
@@ -95,8 +94,10 @@ h3, h2, h1{
 .project {
   width: 35vh;
 }
+main { width: 30%; }
 @media (max-width: 640px) {
   .container {
     place-content: center;
   }
+main { width: 90%; }
 }
