@@ -1,17 +1,41 @@
+name: Build and deploy GH Pages
+
 on:
   push:
     branches:
       - main
-permissions:
-  contents: write
+
+
 jobs:
-  deploy-mdbook:
-    runs-on: ubuntu-22.04
-    concurrency: ci-${{ github.ref }}
+  build:
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: cachix/install-nix-action@v24
-      - run: nix develop --command just build build/
-      - uses: JamesIves/github-pages-deploy-action@v4
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Install Nix
+        uses: cachix/install-nix-action@v20
+      - name: Setup Pages
+        uses: actions/configure-pages@v3
+      - name: Build
+        run: |
+          nix build .#website
+          # https://github.com/actions/deploy-pages/issues/58
+          cp --recursive --dereference --no-preserve=mode,ownership result public
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
         with:
-          folder: result
+          path: public
+
+  deploy:
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
