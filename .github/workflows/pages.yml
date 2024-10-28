@@ -27,7 +27,7 @@ jobs:
         with:
           nix_conf: experimental-features = nix-command flakes
       - name: Build site
-        run: nix build .#pages --print-build-logs
+        run: nix build .#website --print-build-logs
       - name: Adjust permissions
         run: |
           chown -R `id -u`:`id -g` ./result
