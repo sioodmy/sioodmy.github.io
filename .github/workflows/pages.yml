@@ -1,48 +1,17 @@
-name: Deploy to Pages
-
-# Runs on pushes targeting things that look like the default branch
 on:
   push:
-    branches: ["main", "master"]
-  workflow_dispatch:
-
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+    branches:
+      - main
 permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: "pages"
-  cancel-in-progress: true
-
+  contents: write
 jobs:
-  build:
-    runs-on: ubuntu-latest
+  deploy-mdbook:
+    runs-on: ubuntu-22.04
+    concurrency: ci-${{ github.ref }}
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Install Nix
-        uses: nixbuild/nix-quick-install-action@v26
+      - uses: actions/checkout@v3
+      - uses: cachix/install-nix-action@v24
+      - run: nix develop --command just build build/
+      - uses: JamesIves/github-pages-deploy-action@v4
         with:
-          nix_conf: experimental-features = nix-command flakes
-      - name: Build site
-        run: nix build .#website --print-build-logs
-      - name: Adjust permissions
-        run: |
-          chown -R `id -u`:`id -g` ./result
-          chmod -R a+rwx ./result
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
-        with:
-          path: ./result
-  deploy:
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    needs: build
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+          folder: result
